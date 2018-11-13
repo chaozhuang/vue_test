@@ -1,13 +1,24 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <p>
+      <router-link to="/user/foo">/user/foo</router-link>
+      <router-link to="/user/bar">/user/bar</router-link>
+      <router-link to="/user/foo/profile">/user/foo/profile</router-link>
+      <router-link to="/user/foo/posts">/user/foo/posts</router-link>
+      <button @click="test1">/user/foo</button>
+    </p>
     <router-view/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  methods: {
+    test1 () {
+      this.$router.push({path: '/user/foo'})
+    }
+  }
 }
 </script>
 
