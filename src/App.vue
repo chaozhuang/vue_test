@@ -16,7 +16,9 @@ export default {
   name: 'App',
   methods: {
     test1 () {
-      this.$router.push({path: '/user/foo'})
+      // this.$router.push({path: '/user/foo'})
+      console.log(this.$store.state.a)
+      this.$store.commit('increment')
     }
   }
 }
